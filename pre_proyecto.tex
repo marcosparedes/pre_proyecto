@@ -1,0 +1,319 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Simple Sectioned Essay Template
+% LaTeX Template
+%
+% This template has been downloaded from:
+% http://www.latextemplates.com
+%
+% Note:
+% The \lipsum[#] commands throughout this template generate dummy text
+% to fill the template out. These commands should all be removed when 
+% writing essay content.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[12pt]{article} % Default font size is 12pt, it can be changed here
+
+\usepackage{geometry} % Required to change the page size to A4
+\geometry{a4paper} % Set the page size to be A4 as opposed to the default US Letter
+
+\usepackage{graphicx} % Required for including pictures
+
+\usepackage{float} % Allows putting an [H] in \begin{figure} to specify the exact location of the figure
+\usepackage{wrapfig} % Allows in-line images such as the example fish picture
+\usepackage[utf8]{inputenc}
+
+\linespread{1.2} % Line spacing
+
+%\setlength\parindent{0pt} % Uncomment to remove all indentation from paragraphs
+
+\graphicspath{{Pictures/}} % Specifies the directory where pictures are stored
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%	TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage}
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for the horizontal lines, change thickness here
+
+\center % Center everything on the page
+
+\textsc{\LARGE Universidad Nacional De La Patagonia}\\[0.2cm] % Name of your university/college
+\textsc{\LARGE San Juan Bosco}\\[0.2cm] 
+
+\includegraphics[width=0.4\linewidth]{logo.jpg}\\[0.2cm]
+
+\textsc{\Large Facultad de Ingeniería}\\[0.5cm] % Major heading such as course name
+\textsc{\large Proyecto de Tesina}\\ % Minor heading such as course title
+
+
+\HRule \\[0.5cm]
+\huge \textsl{\textbf{Generación de Superficies Mediante Fractales, Paralelizando Procesos}}\\
+\HRule \\[1.2cm]
+
+\large
+\emph{Autores:} Lucas \textsc{Fantacone} - Marcos \textsc{Paredes} % Author name - remove the \href bracket to remove the link
+
+\emph{Tutor:} Gloria \textsc{Bianchi} % Supervisor name - remove the \href bracket to remove the link  
+\\[0.5cm]
+
+{\Large 2016} % Date, change the \today to a set date if you want to be precise
+
+\vfill % Fill the rest of the page with whitespace
+
+\end{titlepage}
+
+%----------------------------------------------------------------------------------------
+%	TABLE OF CONTENTS
+%----------------------------------------------------------------------------------------
+
+\renewcommand{\contentsname}{Índice}
+\tableofcontents % Include a table of contents
+
+\newpage % Begins the essay on a new page instead of on the same page as the table of contents 
+
+%----------------------------------------------------------------------------------------
+%	OBJETIVOS
+%----------------------------------------------------------------------------------------
+
+\section{Objetivos} % Section
+
+
+%------------------------------------------------
+
+\subsection{Objetivos Primarios} % Sub-section
+
+\begin{itemize}
+\item Crear una herramienta que genere superficies montañosas (lo mismo de arriba, va montañosas???) para que puedan ser utilizadas luego en distintos ámbitos por software de terceros.
+\item Brindar una base de investigación para la generación de superficies.
+\item Lograr acelerar la generación de superficies mediante la paralelización de procesos utilizando la GPU.
+\end{itemize}
+
+
+%------------------------------------------------
+
+\subsection{Objetivos Secundarios} % Sub-section
+
+\begin{itemize}
+\item Dar a conocer las distintas aplicaciones que tienen los fractales.
+\item Exportación de imágenes de las superficies creadas.
+\item Proponer la teoría necesaria para lograr en una segunda etapa (fuera del marco de la tesina) la generación de otro tipo de superficies. %(mejor poner esto??  extender para poder por ejemplo, analizar las superficies creadas y analizar a futuro como se verán afectadas con la erosión, considerando las características de la misma)
+\end{itemize}
+
+%----------------------------------------------------------------------------------------
+%	MOTIVACIÓN
+%----------------------------------------------------------------------------------------
+
+\section{Motivación} % Section
+
+
+
+%----------------------------------------------------------------------------------------
+%	REFERENCIAS BIBLIOGRÁFICAS
+%----------------------------------------------------------------------------------------
+
+\section{Referencias Bibliográficas} % Section
+
+\renewcommand\refname{\textbf{Referencias}}
+\begin{thebibliography}{99} % Bibliography - this is intentionally simple in this template
+
+\bibitem[Figueredo and Wolf, 2009]{Figueredo:2009dg}
+Figueredo, A.~J. and Wolf, P. S.~A. (2009).
+\newblock Assortative pairing and life history strategy - a cross-cultural
+  study.
+\newblock {\em Human Nature}, 20:317--330.
+ 
+\end{thebibliography}
+
+%----------------------------------------------------------------------------------------
+%	DESARROLLOS PROPUESTOS
+%----------------------------------------------------------------------------------------
+
+\section{Desarrollos Propuestos} % Section
+
+
+%----------------------------------------------------------------------------------------
+%	RESULTADOS ESPERADOS
+%----------------------------------------------------------------------------------------
+
+\section{Resultados Esperados} % Section
+
+En este apartado será importante tener en cuenta que los resultados esperados tendrán un grado de incertidumbre que podrán ser evaluados a medida que se avance con el desarrollo y/o, una vez finalizado el mismo y puesto en ejecución.
+Se espera dar soporte a distinto tipo de usuarios que necesiten crear rápidamente un terreno para la simulación o bien representación de superficies con características que cumplan los requerimientos de cada uno.
+La aplicación apunta a poder lograr gran parte de lo que plantean los software nombrados con anterioridad, sin limitar al usuario en ningún aspecto respecto de la creación de terrenos; como por ejemplo, una interfaz gráfica más intuitiva y fácil de utilizar.
+Además, a futuro, considerando que el software será de tipo open source, se pretende lograr formar una comunidad de usuarios colaborativos para poder mantener y ampliar funcionalidades.
+
+
+
+%----------------------------------------------------------------------------------------
+%	CRONOGRAMA DE ACTIVIDADES
+%----------------------------------------------------------------------------------------
+
+\section{Cronograma de Actividades} % Section
+\begin{enumerate}
+\item Establecer el marco teórico 
+\item Establecer el/los algoritmo del FBM (intercalar con definición del lenguaje, voy probando algoritmos con cada lenguaje posible)
+\item Definir el lenguaje de programación más apropiado
+\item Definir la herramienta software (librería) para la visualización en 3D (a medida que voy viendo cada lenguaje voy “explorando cada librería disponible para caa lenguaje”)
+\item Definir la unidad de procesamiento y la herramienta  para paralelizar los procesos (esto es sobre el final…una vez obtenido la aplicación = verdad?? VER)
+\item Generar Informe de lo investigado (agrégarlo?? se haría en paralelo junto con el desarrollo de la aplicación)
+\item Desarrollo de la Aplicación (poner asi y con subtareas??) 3 o 4 meses???? Ahora quedo con 4, ver entonces
+\begin{itemize}
+\item Implementar la solución (ponerlo como subtarea????)
+\item Documentación de la solución (ponerlo como subtarea????)
+\end{itemize}
+\item Análisis de los resultados
+\item Conclusiones
+\item ALGO MAAAAAAAAS??
+\end{enumerate}
+
+TOTAL: 7 meses aprox oooooo 6 meses quitando un mes en desarrollo
+
+
+%----------------------------------------------------------------------------------------
+
+
+
+
+%----------------------------------------------------------------------------------------
+%	ACOMODAR ESTO ///////////////////////////////////////////////////////////////////////
+%----------------------------------------------------------------------------------------
+
+
+%----------------------------------------------------------------------------------------
+%	PABLABRAS CLAVES
+%----------------------------------------------------------------------------------------
+
+\section{Palabras Claves} % Section
+
+\begin{enumerate}
+\item Fractales
+\item Superficies.
+\item Dimensión fractal.
+\item Multifractales.
+\item Movimientos Brownianos.
+\item Movimiento Browniano Fraccionario.
+\item Algoritmo del punto medio.
+\end{enumerate}
+
+
+%----------------------------------------------------------------------------------------
+%	PROPUESTA
+%----------------------------------------------------------------------------------------
+
+\section{Propuesta} % Section
+Hoy en día, la visualización tridimensional de superficies tiene un gran campo de aplicaciones, entre algunas cabe citar:
+
+\begin{itemize}
+\item Turismo virtual.
+\item Visualización del clima y topología ambiental.
+\item Uso militar, como parte del ambiente en un simulador de vuelo o de combate (con propósitos de entrenamiento).
+\item Vídeo juegos.
+\item Visualización de obras.
+\end{itemize}
+
+La creación de entornos virtuales que permitan la visualización de distintas superficies, exige la modelización de datos para su formación a través de distintos métodos, técnicas y herramientas. Para generar superficies geográficas, ya sean montañas, valles, costas y mares y paisajes en general; se pueden usar fractales. Muchos objetos o fenómenos naturales exhiben propiedades fractales o de auto similitud, y se pueden representar computacionalmente. El caso de las superficies no es la excepción.
+
+El termino fractal fue introducido por Benoît Mandelbrot como un objeto semi-geométrico cuya estructura básica, fragmentada o irregular, se repite a diferentes escalas\footnote{THE FRACTAL GEOMETRY OF NATURE - (Tusquets, 1982) Benoît Mandelbrot}. Los fractales tienen una propiedad particular denominada dimensión fractal, y es precisamente un exponente que describe la manera en que la estructura del objeto se repite\footnote{Texturing And Modeling - A Procedural Approach (3rd Ed - 2003) David Ebert, Kenton Musgrave, Darwyn Peachey, Ken Perlin, Steven Worley}.
+
+Esta tesina tiene como propósito, la creación de una herramienta de software que permita generar superficies tridimensionales de tipo montañosas a través del uso de los fractales. El software apunta a ser una herramienta OpenSource, lo que permitirá que se pueda expandir a nivel de código y así ampliar en funcionalidad a futuro.
+
+En la generación de superficies, se obtiene la tridimensionalidad empleando la idea de iteración de un sistema fractal, con una pequeña variación. Empleando una fórmula, se obtiene una altura. Esto permite ver el fractal como una curva de nivel, y más tarde representarlo gráficamente como si de un volumen se tratase, dando como resultado una superficie.
+
+El método a utilizar para ello es una variación del Movimiento Browniano Fraccionario (FBM) utilizando campos de altura ya que nos permite generar terrenos muy heterogéneos, que son más adecuados para modelado del terreno a gran escala. Un campo de altura es un arreglo bidimensional con valores de altura para cada intersección de las líneas perpendiculares que forman la rejilla del terreno, donde en cada coordenada se tiene una altura distinta. El Movimiento Browniano fue introducido por el británico Robert Brown en 1923 como un modelo matemático que refleja el comportamiento de varios fenómenos naturales en los que interviene el azar, como los paisajes, islas, perfiles de montañas, etc.
+
+Debe considerarse que así como se empleará la geometría fractal como concepto principal, se hará uso de la tecnología implicada en las Unidades de Procesamiento, GPU precisamente, al trabajar con procesos paralelos, optimizando el tiempo que demandan los cálculos para generar las superficies y el renderizado de las mismas. Al paralelizar los procesos se logra utilizar múltiples procesadores en forma simultánea, aprovechando los existentes hoy en día (tanto de la CPU como de la GPU)  para así, mejorar las prestaciones del software a desarrollar.
+
+
+%----------------------------------------------------------------------------------------
+%	CONTEXTO ACTUAL
+%----------------------------------------------------------------------------------------
+
+\section{Contexto Actual} % Section
+
+A lo largo de la historia de la humanidad el ser humano ha querido comprender el espacio que nos rodea, los fenómenos de la naturaleza y el porqué de la existencia y comportamiento del medio. Estos estudios han llevado al descubrimiento de infinidad de teorías, métodos y herramientas matemáticas que ayudan a comprender un poco más la naturaleza.
+
+Los avances tecnológicos han facilitado mucho más las distintas teorías dando la posibilidad de aplicar métodos matemáticos, cálculos y repeticiones que antes eran humanamente difíciles de calcular.
+
+Entre los descubrimientos que se han hecho, surgió el concepto de "Fractales" como una representación aproximada de objetos de la naturaleza que comparten ciertas propiedades de auto semejanza; es decir, el elemento repite características idénticas a distintos niveles o escalas de observación. Como ya mencioné con anterioridad, el término fractal fue acuñado por Mandelbrot y fue el puntapié inicial para desarrollar luego lo que se denomina geometría fractal. Las figuras comunes de la geometría clásica o euclidiana no son las más adecuadas para generar formas complejas como la hoja de un helecho o el perfil de una montaña. Su limitación se debe a que tienden a perder su estructura cuando son ampliadas; un arco de círculo se transforma poco a poco en una recta; la superficie de una esfera se hace cada vez más plana. Esto no es precisamente lo que sucede con las formas naturales; por ejemplo, la superficie rugosa de una roca mantiene prácticamente la misma complejidad a varios niveles de amplificación con el microscopio. Si analizamos una parte de la roca, y dentro de ella otra más pequeña, y así sucesivamente, no por ello nos parecerá cada vez más lisa.
+
+La geometría fractal de Mandelbrot provee una descripción y un modelo matemático para formas complejas de la naturaleza, que describe mejor los contornos irregulares y aparentemente caóticos del mundo que nos rodea: sus fórmulas permiten estudiar la configuración de árboles y nubes, cordilleras y costas, células y órganos, compuestos químicos y galaxias. La geometría fractal describe los contornos irregulares de la naturaleza, además son simples de generar en computadoras.
+
+El origen de las montañas fractales en computadoras se remonta a cuando Mandelbrot, utilizando como base la investigación de Robert Brown sobre el movimiento de partículas que denominó con su nombre, propuso que se asignara a los fractales dimensiones que no fueran números enteros; es decir, dimensiones fraccionarias. Trabajando con Movimientos Brownianos Fraccionarios de una dimensión, se dio cuenta de que con un fractal de dimensión aproximada a 1,2 la traza de esta función se asemejaba al horizonte de una montaña dentada. Si esta función se extendía a dos dimensiones, el resultado daba la superficie de una montaña.  Los modelos y paisajes fractales en computación se basan en esta idea de montañas fractales.
+
+Existen dos métodos mayoritarios a la hora de construir un paisaje fractal, los cuales son la elevación de puntos y el de campos de altura.% (el algoritmo que emplee se va a ajustar a uno de éstos métodos  lo aclarao?? O directamente cuando describa el algoritmo???)
+
+
+%------------------------------------------------
+
+\subsection{Elevación de puntos} % Sub-section
+Inicialmente, las superficies terrestres se creaban con una versión de subdivisión de polígonos (subdivisión de hexágonos) descritas por Mandelbrot. En éstas, se tenía la característica de dentado de subdivisión poligonal de terrenos y la característica de una misma rugosidad para toda una dimensión homogénea fractal. Después se buscaron técnicas para introducir la erosión en estas superficies; para ello se altera el comportamiento local del terreno, introduciendo el uso de multifractales. (por lo tanto, por cada subdivisión (parte del terreno todo) se aplican las técnicas de erosión y así cambiar la rugosidad en distintas partes de la superficie toda lo aclaro?, queda mejor explicado así, por eso digo)
+
+
+%------------------------------------------------
+
+\subsection{Campos de Altura} % Sub-section
+
+Los modelos de terreno en sistemas gráficos suelen estar formados por lo que se denomina campos de alturas. Un campo de alturas es un arreglo bidimensional con valores de altura para cada intersección de las líneas perpendiculares que forman la rejilla del terreno.
+Posteriormente se mejoró este formato, guardando la mínima y máxima altura dentro del campo de alturas, y se aplica una fórmula para obtener el valor real de la altura.
+No existe una relación estricta entre el relieve de una montaña real y el relieve de los modelos obtenidos con estas funciones fractales, simplemente el modelo computacional se asemeja con buenos resultados a la montaña real. Evidentemente, existen muchos detalles presentes en las montañas reales que no están presentes en los primeros modelos, como puede ser el caso de la erosión o los barrancos.
+La dimensión fractal se puede ver como el nivel de rugosidad de la superficie que se obtiene con ese fractal. Valores más altos generan superficies más rugosas y abruptas, montañas y cordilleras, mientras que si usamos valores más bajos obtendremos superficies más suaves como llanuras (no totalmente planas) o pequeñas montañas. (por esto ultimo digo que no se si decir que solo se generarán superficies montañosas, sería limitar lo que en realidad se puede hacer)
+Hoy en día, las herramientas software que se desarrollan para distintas funciones y que como base tienen la generación de superficies, utilizan estos antecedentes nombrados como principios base en sus desarrollos.
+
+
+%------------------------------------------------
+
+\subsection{Algunos de los desarrollos fundados a partir de estos descubrimientos} % Sub-section
+
+Jens Feder (1988) en su libro “Fractals” [3], realiza la simulación 1-D y 2-D de superficies  montañosas con Movimiento Browniano Fraccionario y además genera líneas de costas a partir de la teoría de Mandelbrot.
+Ignacio Rodríguez Iturbe, un reconocido investigador venezolano que ha trabajado este tema en la Universidad de Princeton, desde la década de los ochenta ha realizado simulaciones de procesos hidrológicos, hidrogeomorfología, y dinámica de procesos fractales a partir de la diferenciación del Ruido Fraccional Browniano, mejor conocido como Ruido Fraccional Gaussiano.
+Mandelbrot a partir de su contribución con la teoría fractal [4] caracteriza, entre varios tópicos, superficies montañosas y sugiere la innovación del tradicional cuadrado por un triángulo o hexágono en la implementación del algoritmo del punto medio para la generación 2-D de montañas.
+Richard Voss [5] mejoró el método del punto medio para la generación de Ruido Fraccional Browniano con un método llamado Adiciones Aleatorias Sucesivas y generó superficies fractales tales como paisajes, los cuales pueden ser apreciados a color.
+Dietmar Saupe, físico alemán, a finales de los ‘80 publicó “The Science of Fractal Images” [6], libro en el cual explica de manera muy clara y sencilla en qué consiste el Movimiento Browniano Fraccionario y desarrolla algoritmos en lenguaje pseudo-formal para la generación de paisajes a partir del algoritmo de Voss.
+Sarah Callaghan y Enric Villar (2002) [7], simularon procesos de lluvia con el propósito de observar el desarrollo del proceso sobre sistemas de comunicaciones de radio, para tal fin utilizaron el algoritmo de Voss.
+
+%------------------------------------------------
+
+\subsection{Herramientas de generación de superficies disponibles}
+A continuación se dará detalle de algunas de las herramientas que actualmente están disponibles.
+
+%------------------------------------------------
+
+\subsubsection{Terragen}
+Consiste en un software diseñado para generar escenarios y paisajes en diferentes entornos. Terragen es freeware (“software gratis”), sin embargo existe una versión comercial con capacidad para producir paisajes con una resolución mejor, mejores efectos de iluminación post-renderizados y corrección de efectos de antialiasing.
+Continuando con las características de Terragen, al no ser OpenSource uno no tiene la posibilidad de incorporar código que amplíe a la herramienta, siendo esta la principal motivación de mi desarrollo, debido a que apunto a poder armar una comunidad que permita la colaboración y ampliación en el proyecto futuro. En referencia a esto último, será considerado el concepto de multiplataforma, inclusive permitiendo su funcionamiento en plataformas Linux, cosa que Terragen no permite. Su aplicación se empezó a hacer popular, desde que una imagen de Terragen apareció en la portada de Newsweek el 16 de abril de 2001. Más recientemente, es importante destacar la utilidad de este tipo de aplicaciones, puesto que se ha empleado en el desarrollo de una película de Hollywood con animaciones y paisajes sorprendentes, Elysium (2013) [9]. Dejando a la vista la utilidad de desarrollar una aplicación que permita poder funcionar como alternativa y totalmente gratuita.
+
+
+\subsubsection{MojoWorld}
+MojoWorld es un conjunto de aplicaciones para el desarrollo de paisajes realistas con base fractal. Dichas aplicaciones son propiedad de Pandromeda Inc., empresa cuyo cofundador es el legendario Dr. Kenton “Doc Mojo” Musgrave.
+A finales de la década de 1980, Musgrave y Mandelbrot trajeron los paisajes fractales al nivel del arte. En 1993 Doc Mojo obtuvo su doctorado en el Departamento de Ciencias de la Computación Yale para este trabajo. Su tesis, "Métodos para la imagen del paisaje realista," sigue siendo la hoja de ruta completa para escribir software para crear y renderizar paisajes fractales. Sumándole a la tesis, los conceptos del libro publicado en 1994, "Texturizado y Modelado: un enfoque de procedimiento." y, los montones de documentos académicos; se dio lugar a la construcción de MojoWords.
+El Dr. Musgrave tiene una reputación mundial como un destacado investigador de gráficos por ordenador y la participación, tanto en la industria de los efectos especiales de Hollywood y el desarrollo de MetaCreations, Bryce 4.0 (el cual luego compraría la compañía DAZ 3D).
+Todos los productos de Pandromeda, Inc son pagos, aunque, se hace una salvedad económica para el uso académico del producto, y además, es posible descargar un DEMO de cada uno, pero como tal, limita algunas funcionalidades. Desde el sitio oficial es posible acceder libremente todos los tutoriales que están disponibles, pero para la descargas de los Demos es necesario previo registro. Los productos funcionan bajo las plataformas Windows y MacOS, aunque es posible exportar  las creaciones a otros programas 3D, esto sólo se permite en versiones pagas.
+Uno de los objetivos que apuntamos con la tesina es permitir la libre exportación de las imágenes creadas a través de nuestro software.
+
+\subsubsection{Blender}
+Consiste en un software dedicado especialmente al modelado, animación y creación de gráficos tridimensionales. Actualmente es open source (no así en sus comienzos) y compatible con todas las versiones de Windows, Mac OS X, GNU/Linux, Solaris, FreeBSD e IRIX (multiplataforma). En cuanto a la aplicación en sí, posee una interfaz gráfica de usuario considerada por muchos como poco intuitiva. 
+Blender se ha empleado en proyectos de gran porte, como ser en pre-visualizaciones de escenas en la película “Spider Man 2 (2004)”. Continuando con el mundo del cine, se utilizó Blender como principal herramienta para la película animada realizada íntegramente con software libre, “Plumíferos (2010)”, proyecto que impulsó el desarrollo de Blender aún más, sobre todo a nivel de animación y manejo de librerías a gran escala. A su vez, se utilizó en varios cortometrajes, tal es el caso de “Elephants Dream” donde se aprovecharon las capacidades extendidas gracias a la posibilidad de poder editar su código fuente, punto a favor que consideramos en nuestro Proyecto.
+Como puede notarse Blender no es una aplicación dedicada a la generación de terrenos, como es el caso de Terragen o bien a lo que apuntamos en nuestro proyecto. A su vez, se debe considerar que no utiliza modelos fractales como motor de desarrollo. De todos modos, esta aplicación, es sin duda un software que posee características similares a la idea propuesta, y que sirve de ejemplo a la hora de mejorar aspectos en nuestro proyecto, ya sea por la interfaz gráfica o alguna característica en la que Blender se encuentre débil.
+
+\subsubsection{Bryce}
+A finales de los 90's y principios del 2000 Bryce, Carrara y Poser fueron programas muy conocidos para el diseño 3D creados por MetaCreations, empresa de desarrollo de software especializados en 3D y que se caracterizaban por sus interfaces que salían un poco de lo común. MetaCreations desapareció y vendió cada una de sus marcas a empresas diferentes, y al día de hoy Daz3D es propietaria de Carrara y Bryce 3D.
+Siguiendo un poco la línea de MojoWorld, Bryce es un software especializado para modelar y animar en 3D paisajes realistas, terrenos, agua y océanos, cielos, nubes, niebla, vegetación y en general ambientes orgánicos 3D. Su flujo de trabajo se basa en utilizar elementos pre-diseñados (montañas, nubes, cielos, árboles, etc.) y modificarlos en su estructura, características e iluminación, para adaptarlos a las necesidades de los usuarios. Bryce actualmente en su versión 7, lanzado en julio del 2010, provee ahora un laboratorio de instancias e iluminación avanzada. Bryce 7 ofrece una buena integración con Daz Studio (otra aplicación destacada de la empresa Daz3D) y acceso a la biblioteca Daz de personajes y objetos digitales, además de una nueva opción para importar modelos en formato Google Sketchup además de importar y exportar archivos FBX y Collada. Bryce 7 está disponible en 3 versiones, una versión de prueba, que es gratis pero sólo se puede utilizar en proyectos no comerciales, una versión estándar que carece de las características nuevas y una versión profesional con las nuevas características.
+Cabe destacar que además de los software nombrados, existen potentes herramientas de distribución libre, como en el caso de Art of Illusion [13], K-3D [14], Open FX [15], que además son open source y que trabajan sobre múltiples plataformas inclusive en Linux. Estas herramientas,  permiten el modelado 3D, texturizado, renderizado; así como también se destacan algunas características como el uso de repositorios en línea y sistema incorporado en la descarga herramienta para la instalación de extensiones, que no se encuentran en el software propietario similar. Sin embargo estas herramientas no trabajan sobre una base fractal para la generación de superficies o paisajes como las detalladas con anterioridad.
+
+\subsubsection{Erdas Imagine}
+Es una herramienta de teledetección, proporcionando herramientas de análisis de imágenes y modelado espacial para crear nueva información o agregar más valor a la existente. Permite visualizar resultados en 2D, 3D y crear  videos y composiciones de mapa. 
+Está diseñado para escalar-adaptar la información geoespacial de acuerdo a las necesidades de producción. 
+Básicamente es un software de procesamiento de datos provenientes de fuentes de teledetección. Algo que no se ajusta en su totalidad a lo planteado en el Proyecto a desarrollar, pero que sin duda es comparable en términos de interfaz y procesamiento de imágenes, lo que permite que los paisajes de la aplicación a desarrollar sirvan como fuente para ERDAS y así generar un complemento entre ambas por ejemplo. 
+
+
+%----------------------------------------------------------------------------------------
+
+\end{document}
